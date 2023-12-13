@@ -197,8 +197,7 @@ const library = {
 
                 </q-bar>
 
-
-
+                
                 <book-shelf :books="bookList" @delete-item="deleteItem => $emit('delete-item', deleteItem)" @add-to-rbs="book => $emit('add-to-rbs', book)">
 
                 </book-shelf>

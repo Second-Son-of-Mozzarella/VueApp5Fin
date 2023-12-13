@@ -70,6 +70,9 @@ app.component('BookItem', {
 
                  <div class="cursor-pointer ellipsis cardInfo">
                    By {{book.author}}
+                   <q-tooltip>
+                     {{book.author}}
+                   </q-tooltip>
                    <q-popup-edit v-model="label" auto-save v-slot="scope">
                      <q-input v-model="book.author" dense autofocus counter @keyup.enter="book.author" />
                    </q-popup-edit>

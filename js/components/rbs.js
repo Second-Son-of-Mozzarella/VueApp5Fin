@@ -60,7 +60,7 @@ app.component('ArchBookShelf', {
               <div class="q-pa-md row items-start q-gutter-md flex-center">
                 <archived-book-item v-for="item in archBooks" :book="item" :key="item.id"  > </archived-book-item>
 
-                <q-card  v-if="loading" class="book-card">
+                <q-card  v-if="loading" v-for="i in 4" class="book-card">
                   <q-item>
 
                     <q-item-section>

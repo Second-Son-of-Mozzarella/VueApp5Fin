@@ -64,7 +64,7 @@ app.component('BookShelf', {
             <q-list >
               <div class="q-pa-md row items-start q-gutter-md flex-center">
                 <book-item v-for="item in books" :book="item" :key="item.id" @delete-item="deleteItem => $emit('delete-item', deleteItem)"  @add-to-rbs="book => $emit('add-to-rbs', book)"> </book-item>
-                <q-card v-if="loading" class="book-card">
+                <q-card v-if="loading" v-for="i in 4" class="book-card">
                   <q-item>
 
                     <q-item-section>

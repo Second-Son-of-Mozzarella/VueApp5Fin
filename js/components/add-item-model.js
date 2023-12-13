@@ -24,22 +24,6 @@ app.component('AddBook', {
                     this.newBook = new Book();
                 })
 
-                // this.$emit('add-item', this.newBook);
-                //
-                //
-                // // clear the form
-                // this.newBook = {
-                //     id: Math.floor(Math.random() * 9999999),
-                //     title: '',
-                //     author: '',
-                //     length: 0,
-                //     language: '',
-                //     timePeriod: '',
-                //     type: '',
-                //     pagesRead: 0,
-                //     favourite: false,
-                // };
-
 
 
             },
