@@ -1,0 +1,183 @@
+:root {
+    --xs-breakpoint: 718px;
+    --sm-breakpoint: 1024px;
+    --md-breakpoint: 1439px;
+    --lg-breakpoint: 1920px;
+}
+
+body{
+    background-image: url("BG.jpeg");
+    /*Background Image Source ->
+    Papers of the Australian Lebanese Historical Society at the National Library of Australia by Paul Convy, April, 2017.
+    https://alhs.org.au/collection/*/
+    background-color: #fff0cb;
+    overflow-x: hidden;
+
+
+
+}
+
+.wrapper{
+    margin-top: 5em;
+
+}
+
+.headerRow{
+    padding: 1em;
+    font-weight: bold;
+}
+
+
+.LbryTop{
+
+    color: white;
+    background-color: #790000;
+    margin-bottom: 0;
+    font-size: x-large;
+    padding: 0.5em;
+    font-weight: bold;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+
+}
+.LbryBtm{
+
+
+    color: black;
+    background-color: white;
+    margin-top: 0;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    padding: 0.25em;
+
+
+}
+
+.addArea{
+    background-color: #fff0cb;
+}
+
+.bookShelf{
+    height: fit-content;
+    max-height: 1000px;
+    overflow-x: hidden;
+
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.top-card{
+    background-color: #790000;
+}
+
+
+
+.book-card{
+    width: 300px;
+    height: 280px;
+}
+
+.api-card{
+    width: 280px;
+    height: 150px;
+
+}
+
+.archive-card{
+    width: 300px;
+    height: 280px;
+}
+
+
+
+.addBookForm{
+    padding: 5px;
+}
+
+.cardInfo:hover {
+    color: #66bb6a;
+}
+
+.completed {
+    background-color: #696969;
+}
+
+.searchBar{
+    padding: 10px;
+}
+
+.sortBtn{
+    width: 100px;
+}
+
+.WelcomeInfo{
+    background-color: #fff0cb;
+}
+
+/*Container*/
+
+
+
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+    width: 100%;
+    margin-right: auto ;
+    margin-left: auto;
+}
+
+@media (min-width: var(--xs-breakpoint)) {
+    .container,
+    .container-sm {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: var(--sm-breakpoint)) {
+    .container,
+    .container-sm,
+    .container-md {
+        max-width: 920px;
+    }
+}
+
+@media (min-width: var(--md-breakpoint)) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: var(--lg-breakpoint)) {
+    .container,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl {
+        max-width: 1440px;
+    }
+}
+
+/*Container - done*/
+
+.WelcomeInfo{
+    background-color: #fff0cb;
+
+}
+
+
+
+.apiBtn{
+    padding-bottom: 5px;
+}
+
+.apiAddModel{
+    background-color: #fff0cb;
+}
