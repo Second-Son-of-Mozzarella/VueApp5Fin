@@ -194,7 +194,7 @@ app.component('BookItem', {
               <div class="cursor-pointer ellipsis cardInfo">
                 Pages Read: {{book.pagesRead}} Pages
                 <q-popup-edit v-model="book.pagesRead" auto-save v-slot="scope">
-                  <q-input v-model.number="scope.set" dense autofocus counter @keyup="setPagesRead(scope.set)" />
+                  <q-input v-model.number="scope.value" dense autofocus counter @keyup="setPagesRead(scope.value)" />
                 </q-popup-edit>
               </div>
               
