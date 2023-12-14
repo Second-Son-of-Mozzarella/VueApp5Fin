@@ -258,35 +258,7 @@ const router = VueRouter.createRouter({
     routes, // short for `routes: routes`
 })
 
-const app = Vue.createApp({
-    data(){
-
-
-
-        return {
-
-
-
-        };
-
-
-
-    },
-
-    methods: {
-
-
-
-
-
-
-
-
-
-    }
-
-
-})
+const app = Vue.createApp({})
 
 app.use(router)
 

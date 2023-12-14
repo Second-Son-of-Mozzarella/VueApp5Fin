@@ -111,7 +111,7 @@ app.component('ApiAddItem', {
                   label="Number of Pages Read"
               />
 
-
+            
               <q-btn
                   @click.prevent="addIt"
                   type="submit"

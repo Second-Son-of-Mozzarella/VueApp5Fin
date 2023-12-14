@@ -80,17 +80,21 @@ app.component('ApiItem', {
               {{ item.author }}
             </q-tooltip>
           </div>
+            
+          <div>
 
-          <q-btn
-              size="10px"
-              @click="visible = !visible"
-              label="add form"
-              class="q-mt-md text-black"
-              color="amber-14"
-          >
-          </q-btn>
-
-
+            <q-btn
+                size="10px"
+                @click="visible = !visible"
+                label="add form"
+                class="q-mt-md text-black"
+                color="amber-14"
+            >
+            </q-btn>
+          </div>
+          
+          
+          
         </q-card-section>
 
 

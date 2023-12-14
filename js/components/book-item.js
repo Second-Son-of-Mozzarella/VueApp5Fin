@@ -15,6 +15,7 @@ app.component('BookItem', {
 
     methods: {
 
+
         deleteIt: function () {
 
             db.collection(Book.collectionName).doc(this.book.id).delete();
@@ -29,7 +30,67 @@ app.component('BookItem', {
             db.collection(ArchBook.collectionName).add(this.book.toFirestore())
             db.collection(Book.collectionName).doc(this.book.id).delete();
 
-        }
+        },
+
+
+        setTitle: function (value) {
+            db.collection(Book.collectionName).doc(this.book.id).update({
+                title: value
+            })
+                .then(() => {
+                    console.log("Document successfully updated!")
+                })
+
+        },
+
+        setAuthor: function (value) {
+            db.collection(Book.collectionName).doc(this.book.id).update({
+                author: value
+            })
+                .then(() => {
+                    console.log("Document successfully updated!")
+                })
+
+        },
+
+
+
+
+        setLength: function (value) {
+            db.collection(Book.collectionName).doc(this.book.id).update({
+                length: value
+            })
+                .then(() => {
+                    console.log("Document successfully updated to " + value)
+                })
+
+        },
+
+
+        setLanguage: function (value) {
+            db.collection(Book.collectionName).doc(this.book.id).update({
+                language: value
+            })
+                .then(() => {
+                    console.log("Document successfully updated!")
+                })
+
+        },
+
+
+        setPagesRead: function (value) {
+            db.collection(Book.collectionName).doc(this.book.id).update({
+                pagesRead: value
+            })
+                .then(() => {
+                    console.log("Document successfully updated!")
+                })
+
+        },
+
+
+
+
 
     },
 
@@ -60,8 +121,8 @@ app.component('BookItem', {
                    <q-tooltip>
                      {{book.title}}
                    </q-tooltip>
-                 <q-popup-edit v-model="label" auto-save v-slot="scope">
-                   <q-input v-model="book.title" dense autofocus counter @keyup.enter="book.set" />
+                 <q-popup-edit v-model="book.title" auto-save v-slot="scope">
+                   <q-input v-model="scope.value" dense autofocus counter @keyup="setTitle(scope.value)" />
                  </q-popup-edit>
                </div>
                  
@@ -73,8 +134,8 @@ app.component('BookItem', {
                    <q-tooltip>
                      {{book.author}}
                    </q-tooltip>
-                   <q-popup-edit v-model="label" auto-save v-slot="scope">
-                     <q-input v-model="book.author" dense autofocus counter @keyup.enter="book.author" />
+                   <q-popup-edit v-model="book.author" auto-save v-slot="scope">
+                     <q-input v-model="scope.value" dense autofocus counter @keyup="setAuthor(scope.value)" />
                    </q-popup-edit>
                  </div>
              </div>
@@ -110,36 +171,30 @@ app.component('BookItem', {
             <q-card-section class="q-pt-none">
               <div class="cursor-pointer ellipsis cardInfo">
                 Length: {{book.length}} Pages
-                <q-popup-edit v-model="label" auto-save v-slot="scope">
-                  <q-input v-model.number="book.length" dense autofocus counter @keyup.enter="book.length" />
+                <q-popup-edit v-model="book.length" auto-save v-slot="scope">
+                  <q-input v-model.number="scope.value" dense autofocus counter @keyup="setLength(scope.value)" />
                 </q-popup-edit>
               </div>
              
               <div class="cursor-pointer ellipsis cardInfo">
                 Language: {{book.language}}
-                <q-popup-edit v-model="label" auto-save v-slot="scope">
-                  <q-input v-model="book.language" dense autofocus counter @keyup.enter="book.language" />
+                <q-popup-edit v-model="book.language" auto-save v-slot="scope">
+                  <q-input v-model="scope.value" dense autofocus counter @keyup="setLanguage(scope.set)" />
                 </q-popup-edit>
               </div>
        
-              <div class="cursor-pointer ellipsis cardInfo">
+              <div class="ellipsis">
                 Time Period: {{book.timePeriod}}
-                <q-popup-edit v-model="label" auto-save v-slot="scope">
-                  <q-input v-model="book.timePeriod" dense autofocus counter @keyup.enter="book.timePeriod" />
-                </q-popup-edit>
               </div>
             
-              <div class="cursor-pointer ellipsis cardInfo">
+              <div class="ellipsis">
                 Type: {{book.type}}
-                <q-popup-edit v-model="label" auto-save v-slot="scope">
-                  <q-input v-model="book.type" dense autofocus counter @keyup.enter="book.type" />
-                </q-popup-edit>
               </div>
               
               <div class="cursor-pointer ellipsis cardInfo">
                 Pages Read: {{book.pagesRead}} Pages
-                <q-popup-edit v-model="label" auto-save v-slot="scope">
-                  <q-input v-model.number="book.pagesRead" dense autofocus counter @keyup.enter="book.pagesRead" />
+                <q-popup-edit v-model="book.pagesRead" auto-save v-slot="scope">
+                  <q-input v-model.number="scope.set" dense autofocus counter @keyup="setPagesRead(scope.set)" />
                 </q-popup-edit>
               </div>
               
